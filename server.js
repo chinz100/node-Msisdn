@@ -8,8 +8,8 @@ app.use(msisdn(['OPERATOR_CUSTOM_HEADER_1','OPERATOR_CUSTOM_HEADER_2']));
 const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) =>{ 
-    console.log(req.msisdn);
-    res.send('Msisdn : ' + req.msisdn);
+    // console.log(req);
+    res.json(req._parsedUrl);
 })
 
 app.listen(port, () => console.log(`Msisdn example app listening on port ${port}!`));
